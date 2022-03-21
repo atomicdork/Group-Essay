@@ -74,9 +74,10 @@ In 2019 27\% of UK emissions came from road transport \cite{waite2019emissions}.
 While the exact reaction differs between fuel cell types, the general process can be seen in the diagram\ref{fig:fuelCellBasic} \cite{Mark2003SolidOxide}. The system is composed of an anode, a cathode, an electrolyte and the load or external circuit. At the anode, hydrogen is oxidised into protons and electrons. At the cathode, oxygen is ionised, then depending on the electrolyte type, either the oxygen ions or the protons are transported over the electrolyte. At the same time, the electrons travel externally to provide electrical power \cite{Mark2003SolidOxide}.
 
 
-\begin{figure}[h!] \label{fig:fuelCellBasic}
+\begin{figure}[h!]
     \includegraphics[width=\textwidth]{fuelCellBasics.jpg}
     \caption{Diagram of the general operating principles of a fuel cell \cite{Mark2003SolidOxide}}
+    \label{fig:fuelCellBasic}
     \centering  
 \end{figure}
 
@@ -136,7 +137,26 @@ The option to examine the effect of directly injecting oxygen into this system w
 \subsection{Heat Management}
 Other subsystems are also vital in supporting the entire boosting system and the compressor. Heat Management is essential to maintain the system thermal and energy stability to withstand different environmental conditions. Steady-state operation of the fuel cell stack is critical to ensure maximum power output efficiency.  
 
-The heat exchange mechanism of fuel cells involves two parts, heating and cooling. The LT-PEM fuel cell needs to be maintained at thermal equilibrium at 60-80\degree C throughout the operation for maximum efficiency. The hydrogen and oxygen need to be heated to the same temperature when entering the fuel cell stack. On the other hand, a cooling system is necessary to remove extra heat generated during the fuel cell reaction. Four cooling strategies are commonly used in fuel cell vehicles (as shown in Table 1). For a typical FCEV with 100kW power, edge cooling or heat spreader is insufficient; air flow cooling cannot be made efficient either without reducing the fuel cell reaction rate [Wen, 2011]. Phase change cooling is generally desirable but external coolant is required for vaporization cooling. Thus liquid cooling is most widely adopted on high power FCS for its strong cooling capability [Nguyen, 2020].  In this design, liquid cooling is selected as it allows recovering up to 36\% of energy from waste heat (Figure x) by combining with output water as coolant. This approach increases the system's overall power efficiency from recovering excess heat energy and up-cycles the water output as a coolant and humidifier for the gases. 
+The heat exchange mechanism of fuel cells involves two parts, heating and cooling. The LT-PEM fuel cell needs to be maintained at thermal equilibrium at 60-80\degree C throughout the operation for maximum efficiency. The hydrogen and oxygen need to be heated to the same temperature when entering the fuel cell stack. On the other hand, a cooling system is necessary to remove extra heat generated during the fuel cell reaction. Four cooling strategies are commonly used in fuel cell vehicles (as shown in Table \ref{tab:coolingStrats}). For a typical FCEV with 100kW power, edge cooling or heat spreader is insufficient; air flow cooling cannot be made efficient either without reducing the fuel cell reaction rate [Wen, 2011]. Phase change cooling is generally desirable but external coolant is required for vaporization cooling. Thus liquid cooling is most widely adopted on high power FCS for its strong cooling capability [Nguyen, 2020].  In this design, liquid cooling is selected as it allows recovering up to 36\% of energy from waste heat (Figure x) by combining with output water as coolant. This approach increases the system's overall power efficiency from recovering excess heat energy and up-cycles the water output as a coolant and humidifier for the gases. 
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|p{0.18\textwidth}|p{0.38\textwidth}||p{0.38\textwidth}|} %{|l||c|c|c|c|}
+    \hline
+    Cooling Strategy & Advantages & Limitations \\ [0.5ex] 
+    \hline\hline
+    Edge Cooling & Simple setup, small parasitic power & Low efficiency \\
+    \hline
+    Separate Air Flow & Simple setup, small parasitic power & A trade-off between efficiency and parasitic power \\
+    \hline
+    Liquid Cooling & Strong cooling power & Large radiator \\
+    \hline
+    Phase Change Cooling & Strong cooling power, no coolant pumps & Complex setup, instability \\
+    \hline
+    \end{tabular}
+    \caption{Cooling Strategies in FCEV}
+    \label{tab:coolingStrats}
+\end{table}
 
 \newpage
 
