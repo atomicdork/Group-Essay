@@ -1,0 +1,100 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Arsclassica Article
+% Structure Specification File
+%
+% This file has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Lorenzo Pantieri (http://www.lorenzopantieri.net) with extensive modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	REQUIRED PACKAGES
+%----------------------------------------------------------------------------------------
+
+% \usepackage[
+% nochapters, % Turn off chapters since this is an article        
+% % beramono, % Use the Bera Mono font for monospaced text (\texttt)
+% eulermath,% Use the Euler font for mathematics
+% pdfspacing, % Makes use of pdftex’ letter spacing capabilities via the microtype package
+% dottedtoc, % Dotted lines leading to the page numbers in the table of contents
+% ]{} % The layout is based on the Classic Thesis style
+
+% \usepackage{showframe}
+
+\usepackage[a4paper, margin=1in]{geometry}
+
+% \usepackage{arsclassica} % Modifies the Classic Thesis package
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+
+\usepackage{titling} % To control the title
+\setlength{\droptitle}{-4.5em}   % This is your set screw
+
+\usepackage[utf8]{inputenc} % Required for including letters with accents
+
+\usepackage{fancyhdr} % Allows for the inclusion of fancy headers
+
+\usepackage{graphicx} % Required for including images
+\graphicspath{{Figures/}} % Set the default folder for images
+
+\usepackage{glossaries} % Allows for a nice list of glossaries
+
+\usepackage{enumitem} % Required for manipulating the whitespace between and within lists
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{subfig} % Required for creating figures with multiple parts (subfigures)
+
+\usepackage{amsmath,amssymb,amsthm} % For including math equations, theorems, symbols, etc
+
+\usepackage{varioref} % More descriptive referencing
+
+\usepackage{hyperref}
+
+\usepackage{gensymb}
+
+\usepackage{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	HEADING STYLES
+%---------------------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{14pt}
+\fancyhead[R]{\lowercase{\thetitle}} % TODO MAKE LOWER CASE
+\fancyhead[L]{\thepage}
+
+%----------------------------------------------------------------------------------------
+%	THEOREM STYLES
+%---------------------------------------------------------------------------------------
+
+\theoremstyle{definition} % Define theorem styles here based on the definition style (used for definitions and examples)
+\newtheorem{definition}{Definition}
+
+\theoremstyle{plain} % Define theorem styles here based on the plain style (used for theorems, lemmas, propositions)
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{remark} % Define theorem styles here based on the remark style (used for remarks and notes)
+
+%----------------------------------------------------------------------------------------
+%	HYPERLINKS
+%---------------------------------------------------------------------------------------
+
+% \hypersetup{
+% %draft, % Uncomment to remove all links (useful for printing in black and white)
+% colorlinks=true, breaklinks=true, bookmarks=true,bookmarksnumbered,
+% urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen, % Link colors
+% pdftitle={}, % PDF title
+% pdfauthor={\textcopyright}, % PDF Author
+% pdfsubject={}, % PDF Subject
+% pdfkeywords={}, % PDF Keywords
+% pdfcreator={pdfLaTeX}, % PDF Creator
+% pdfproducer={LaTeX with hyperref and ClassicThesis} % PDF producer
+% }
