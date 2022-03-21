@@ -60,12 +60,12 @@ This report first addresses the primary and secondary objectives of the project;
 
 The subject is researching the booster system that increases the efficiency of the FCVs. As mentioned, a test rig will be designed. Data will be collected in the test rig, which will be used for quantifying measurement and simulation to prove feasibility. This should contain a variety of sensors responsible for measuring temperature, pressure, humidity, flow, etc. The data collected will be input into the designed system console for analysis. At the same time, appropriate electronic load devices will be used, which will be responsible for measuring the output power of the fuel cell.
 
-Theoretically, the higher the reaction pressure, the higher the fuel cell’s performance. Therefore, the control variable method is adopted. First, experiments are carried out with hydrogen under constant pressure, and the power of the battery system is tested by controlling the pressure of the air in which the reaction is carried out. Then, experiments are carried out with air under constant pressure, and the power of the battery system is tested by controlling the pressure of hydrogen gas. At the same time, factors such as temperature and humidity that may affect the experimental results should also be considered. Finally, the project will identify the maximum power generation efficiency that can be safely achieved under experimental conditions.
+Theoretically, the higher the reaction pressure, the higher the fuel cell's performance. Therefore, the control variable method is adopted. First, experiments are carried out with hydrogen under constant pressure, and the power of the battery system is tested by controlling the pressure of the air in which the reaction is carried out. Then, experiments are carried out with air under constant pressure, and the power of the battery system is tested by controlling the pressure of hydrogen gas. At the same time, factors such as temperature and humidity that may affect the experimental results should also be considered. Finally, the project will identify the maximum power generation efficiency that can be safely achieved under experimental conditions.
 
 \section{Background}
 
 
-In 2019 27\% of UK emissions came from road transport \cite{waite2019emissions}. To reach the UK’s and global emissions targets, alternatives to the internal combustion engine need to be considered. Fuel cell electric vehicles (FCEVs) provide an attractive option \cite{yoshida2015toyota}. A fuel cell vehicle uses hydrogen as its fuel source. Electricity is generated via a chemical reaction between oxygen and hydrogen to create water; as can be seen in equation \ref{eq:pemChem}. This electricity is stored in a battery and uses an electric motor to move. One of the main advantages of an FCEV over a traditional battery-powered electric vehicle (BEV) is the refuelling time. A typical electric car such as the Nissan LEAF takes 7 hours 30 minutes to fully recharge from empty, giving a range of 168 miles \cite{Nissan2022Elec}. Compared to the 3 minutes of an FCEV like the Toyota Mirai \cite{yoshida2015toyota}. 
+In 2019 27\% of UK emissions came from road transport \cite{waite2019emissions}. To reach the UK's and global emissions targets, alternatives to the internal combustion engine need to be considered. Fuel cell electric vehicles (FCEVs) provide an attractive option \cite{yoshida2015toyota}. A fuel cell vehicle uses hydrogen as its fuel source. Electricity is generated via a chemical reaction between oxygen and hydrogen to create water; as can be seen in equation \ref{eq:pemChem}. This electricity is stored in a battery and uses an electric motor to move. One of the main advantages of an FCEV over a traditional battery-powered electric vehicle (BEV) is the refuelling time. A typical electric car such as the Nissan LEAF takes 7 hours 30 minutes to fully recharge from empty, giving a range of 168 miles \cite{Nissan2022Elec}. Compared to the 3 minutes of an FCEV like the Toyota Mirai \cite{yoshida2015toyota}. 
 
 \begin{equation} \label{eq:pemChem}
     2H_{2} + O_2 \rightarrow 2H_{2}O + energy
@@ -75,7 +75,7 @@ While the exact reaction differs between fuel cell types, the general process ca
 
 
 \begin{figure}[h!] \label{fig:fuelCellBasic}
-    \includegraphics[scale=0.8]{fuelCellBasics.jpg}
+    \includegraphics[width=\textwidth]{fuelCellBasics.jpg}
     \caption{Diagram of the general operating principles of a fuel cell \cite{Mark2003SolidOxide}}
     \centering  
 \end{figure}
@@ -108,21 +108,35 @@ To improve the attractiveness of fuel cell vehicles, their efficiency needs to b
 \section{Overview of Proposed solution}
 
 \begin{figure}[h!] \label{fig:systemOverview}
-    \includegraphics[scale=0.8]{systemOverview.jpg}
+    \includegraphics[width=\textwidth]{systemOverview.jpg}
     \caption{Diagram of the proposed test rig systems}
     \centering  
 \end{figure}
 
 \subsection{Air Intake and Boosting}
-The air intake and boosting system will be the initial point where the ambient air at atmospheric pressure enters the system. The project brief aims to develop a testing rig for the fuel cell’s power output at varying pressure ratios. This suggests that the boosting system needs to take the ambient air at atmospheric pressure and supply the system with the relevant ratios. The first stage in the project will be to determine a definitive range of pressure ratios that must be provided to the fuel cell to carry out the appropriate testing. This can be done by reading relevant literature on alternate methods of fuel cell tests on comparable fuel cell stack sizes and how the cells performed for these pressure ratios. For example, the study on the optimal pressure ratios of a PEM fuel cell\cite{hoeflinger2020air} indicated that the tested pressure ratios were between 1.0 and 2.2. A further review of multiple studies into the relevant fuel cells will show the necessary ratios.
+The air intake and boosting system will be the initial point where the ambient air at atmospheric pressure enters the system. The project brief aims to develop a testing rig for the fuel cell's power output at varying pressure ratios. This suggests that the boosting system needs to take the ambient air at atmospheric pressure and supply the system with the relevant ratios. The first stage in the project will be to determine a definitive range of pressure ratios that must be provided to the fuel cell to carry out the appropriate testing. This can be done by reading relevant literature on alternate methods of fuel cell tests on comparable fuel cell stack sizes and how the cells performed for these pressure ratios. For example, the study on the optimal pressure ratios of a PEM fuel cell\cite{hoeflinger2020air} indicated that the tested pressure ratios were between 1.0 and 2.2. A further review of multiple studies into the relevant fuel cells will show the necessary ratios.
 
-In terms of designing the boosting system to provide a variable pressure ratio, the stages described in figure \ref{fig:airIntakeSys} are planned to regulate the values of pressure and the flow speed entering the concurrent subsystems. The ambient air temperature will also impact these values and the work required of the compressor. The Steady Flow Energy equation (equation number) can be utilised to determine the values from the compressor to the intake receiver when consulting the operating power of the compressor’s impeller. Here the values of $\dot{Q}$ represents the rate of heat added to the system to $\dot{W_{ext}}$, the rate of work done. The values for $\dot{m}$, mass flow rate of air in the compressor, $h_n$, enthalpy entering or leaving the system, $V_n$, speed of the air and $z_n$, the height at which the air enters or leaves the system, will be explored in the following works to describe how they can be found (note that $g$ describes acceleration due to gravity). This will the bassline amount power needed to operate the compressor, which will then need more to account for losses. Note that mass air flow valves and pressure gauges will be utilised in the subsystem to provide these necessary values. 
+In terms of designing the boosting system to provide a variable pressure ratio, the stages described in figure \ref{fig:airIntakeSys} are planned to regulate the values of pressure and the flow speed entering the concurrent subsystems. The ambient air temperature will also impact these values and the work required of the compressor. The Steady Flow Energy equation as seen in equation \ref{eq:rateOfHeatAdded} can be utilised to determine the values from the compressor to the intake receiver when consulting the operating power of the compressor's impeller. Here the values of $\dot{Q}$ represents the rate of heat added to the system to $\dot{W_{ext}}$, the rate of work done. The values for $\dot{m}$, mass flow rate of air in the compressor, $h_n$, enthalpy entering or leaving the system, $V_n$, speed of the air and $z_n$, the height at which the air enters or leaves the system, will be explored in the following works to describe how they can be found (note that $g$ describes acceleration due to gravity). This will the bassline amount power needed to operate the compressor, which will then need more to account for losses. Note that mass air flow valves and pressure gauges will be utilised in the subsystem to provide these necessary values. 
 
-\begin{figure}[h!] \label{fig:airIntakeSys}
-    \includegraphics[scale=0.8]{air intake system diagram.png}
+\begin{figure}[h]
+    \includegraphics[width=\textwidth]{air intake system diagram.jpg}
     \caption{Diagram of the proposed test rig systems}
     \centering  
-\end{figure}
+\end{figure}\label{fig:airIntakeSys}
+
+\begin{figure}[h]
+\begin{equation} 
+    E=mc^2
+\end{equation}
+\caption{Steady Flow Energy equation}
+\end{figure}\label{eq:rateOfHeatAdded}
+
+The option to examine the effect of directly injecting oxygen into this system will be implemented. Here, the studies into relevant literature can also provide input on the impact of different levels of oxygen percentages entering the fuel cell. As part of investigating this option, the values of oxygen percentages in the incoming air will need to be kept track of. Further, the input location of such oxygen will need to be determined in conjunction with the other systems.  
+
+\subsection{Heat Management}
+Other subsystems are also vital in supporting the entire boosting system and the compressor. Heat Management is essential to maintain the system thermal and energy stability to withstand different environmental conditions. Steady-state operation of the fuel cell stack is critical to ensure maximum power output efficiency.  
+
+The heat exchange mechanism of fuel cells involves two parts, heating and cooling. The LT-PEM fuel cell needs to be maintained at thermal equilibrium at 60-80\degree C throughout the operation for maximum efficiency. The hydrogen and oxygen need to be heated to the same temperature when entering the fuel cell stack. On the other hand, a cooling system is necessary to remove extra heat generated during the fuel cell reaction. Four cooling strategies are commonly used in fuel cell vehicles (as shown in Table 1). For a typical FCEV with 100kW power, edge cooling or heat spreader is insufficient; air flow cooling cannot be made efficient either without reducing the fuel cell reaction rate [Wen, 2011]. Phase change cooling is generally desirable but external coolant is required for vaporization cooling. Thus liquid cooling is most widely adopted on high power FCS for its strong cooling capability [Nguyen, 2020].  In this design, liquid cooling is selected as it allows recovering up to 36\% of energy from waste heat (Figure x) by combining with output water as coolant. This approach increases the system's overall power efficiency from recovering excess heat energy and up-cycles the water output as a coolant and humidifier for the gases. 
 
 \newpage
 
