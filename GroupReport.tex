@@ -108,7 +108,7 @@ To improve the attractiveness of fuel cell vehicles, their efficiency needs to b
 
 \section{Overview of Proposed solution}
 
-\begin{figure}[h!] \label{fig:systemOverview}
+\begin{figure}[h] \label{fig:systemOverview}
     \includegraphics[width=\textwidth]{systemOverview.jpg}
     \caption{Diagram of the proposed test rig systems}
     \centering  
@@ -117,27 +117,27 @@ To improve the attractiveness of fuel cell vehicles, their efficiency needs to b
 \subsection{Air Intake and Boosting}
 The air intake and boosting system will be the initial point where the ambient air at atmospheric pressure enters the system. The project brief aims to develop a testing rig for the fuel cell's power output at varying pressure ratios. This suggests that the boosting system needs to take the ambient air at atmospheric pressure and supply the system with the relevant ratios. The first stage in the project will be to determine a definitive range of pressure ratios that must be provided to the fuel cell to carry out the appropriate testing. This can be done by reading relevant literature on alternate methods of fuel cell tests on comparable fuel cell stack sizes and how the cells performed for these pressure ratios. For example, the study on the optimal pressure ratios of a PEM fuel cell\cite{hoeflinger2020air} indicated that the tested pressure ratios were between 1.0 and 2.2. A further review of multiple studies into the relevant fuel cells will show the necessary ratios.
 
-In terms of designing the boosting system to provide a variable pressure ratio, the stages described in figure \ref{fig:airIntakeSys} are planned to regulate the values of pressure and the flow speed entering the concurrent subsystems. The ambient air temperature will also impact these values and the work required of the compressor. The Steady Flow Energy equation as seen in equation \ref{eq:rateOfHeatAdded} can be utilised to determine the values from the compressor to the intake receiver when consulting the operating power of the compressor's impeller. Here the values of $\dot{Q}$ represents the rate of heat added to the system to $\dot{W_{ext}}$, the rate of work done. The values for $\dot{m}$, mass flow rate of air in the compressor, $h_n$, enthalpy entering or leaving the system, $V_n$, speed of the air and $z_n$, the height at which the air enters or leaves the system, will be explored in the following works to describe how they can be found (note that $g$ describes acceleration due to gravity). This will the bassline amount power needed to operate the compressor, which will then need more to account for losses. Note that mass air flow valves and pressure gauges will be utilised in the subsystem to provide these necessary values. 
+In terms of designing the boosting system to provide a variable pressure ratio, the stages described in figure \ref{fig:airIntakeSys} are planned to regulate the values of pressure and the flow speed entering the concurrent subsystems. The ambient air temperature will also impact these values and the work required of the compressor. The Steady Flow Energy equation(\ref{eq:Steady_Flow_Enegy_Equation}), can be utilised to determine the values from the compressor to the intake receiver when consulting the operating power of the compressor's impeller. Here the values of $\dot{Q}$ represents the rate of heat added to the system to $\dot{W_{ext}}$, the rate of work done. The values for $\dot{m}$, mass flow rate of air in the compressor which as the steady flow implies remains constant, $h_n$, enthalpy entering or leaving the system, $V_n$, speed of the air and $z_n$, the height at which the air enters or leaves the system, will be explored in the following works to describe how they can be found (note that $g$ describes acceleration due to gravity). This will the bassline amount power needed to operate the compressor, which will then need more to account for losses. Note that mass air flow valves and pressure gauges will be utilised in the subsystem to provide these necessary values. 
+
+\begin{equation}\label{eq:Steady_Flow_Enegy_Equation}
+        \dot{Q}-\dot{W_{ext}}=\dot{m}((h_{2}+\frac{1}{2}V_{2}^{2}+gz_{2})-(h_{1}+\frac{1}{2}V_{1}^{2}+gz_{1}))
+\end{equation}
+
+The option to examine the effect of directly injecting oxygen into this system will be implemented. Here, the studies into relevant literature can also provide input on the impact of different levels of oxygen percentages entering the fuel cell. As part of investigating this option, the values of oxygen percentages in the incoming air will need to be kept track of. Further, the input location of such oxygen will need to be determined in conjunction with the other systems.  
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{air intake system diagram.jpg}
     \caption{Diagram of the proposed test rig systems}
-    \centering  
-\end{figure}\label{fig:airIntakeSys}
+    \centering
+    \label{fig:airIntakeSys}  
+\end{figure}
 
-\begin{figure}[h]
-\begin{equation} 
-    E=mc^2
-\end{equation}
-\caption{Steady Flow Energy equation}
-\end{figure}\label{eq:rateOfHeatAdded}
-
-The option to examine the effect of directly injecting oxygen into this system will be implemented. Here, the studies into relevant literature can also provide input on the impact of different levels of oxygen percentages entering the fuel cell. As part of investigating this option, the values of oxygen percentages in the incoming air will need to be kept track of. Further, the input location of such oxygen will need to be determined in conjunction with the other systems.  
 
 \subsection{Heat Management}
+
 Other subsystems are also vital in supporting the entire boosting system and the compressor. Heat Management is essential to maintain the system thermal and energy stability to withstand different environmental conditions. Steady-state operation of the fuel cell stack is critical to ensure maximum power output efficiency.  
 
-The heat exchange mechanism of fuel cells involves two parts, heating and cooling. The LT-PEM fuel cell needs to be maintained at thermal equilibrium at 60-80\degree C throughout the operation for maximum efficiency. The hydrogen and oxygen need to be heated to the same temperature when entering the fuel cell stack. On the other hand, a cooling system is necessary to remove extra heat generated during the fuel cell reaction. Four cooling strategies are commonly used in fuel cell vehicles (as shown in Table \ref{tab:coolingStrats}). For a typical FCEV with 100kW power, edge cooling or heat spreader is insufficient; air flow cooling cannot be made efficient either without reducing the fuel cell reaction rate [Wen, 2011]. Phase change cooling is generally desirable but external coolant is required for vaporization cooling. Thus liquid cooling is most widely adopted on high power FCS for its strong cooling capability [Nguyen, 2020].  In this design, liquid cooling is selected as it allows recovering up to 36\% of energy from waste heat (Figure x) by combining with output water as coolant. This approach increases the system's overall power efficiency from recovering excess heat energy and up-cycles the water output as a coolant and humidifier for the gases. 
+The heat exchange mechanism of fuel cells involves two parts, heating and cooling. The LT-PEM fuel cell needs to be maintained at thermal equilibrium at 60-80\degree C throughout the operation for maximum efficiency. The hydrogen and oxygen need to be heated to the same temperature when entering the fuel cell stack. On the other hand, a cooling system is necessary to remove extra heat generated during the fuel cell reaction. Four cooling strategies are commonly used in fuel cell vehicles (as shown in Table \ref{tab:coolingStrats}). For a typical FCEV with 100kW power, edge cooling or heat spreader is insufficient; air flow cooling cannot be made efficient either without reducing the fuel cell reaction rate\cite{wenthermalmanagement}. Phase change cooling is generally desirable but external coolant is required for vaporization cooling. Thus liquid cooling is most widely adopted on high power FCS for its strong cooling capability\cite{nguyen2020proton}.  In this design, liquid cooling is selected as it allows recovering up to 36\% of energy from waste heat (Figure \ref{fig:sangkyEnergy}) by combining with output water as coolant. This approach increases the system's overall power efficiency from recovering excess heat energy and up-cycles the water output as a coolant and humidifier for the gases. 
 
 \begin{table}[h!]
     \centering
@@ -150,6 +150,34 @@ The heat exchange mechanism of fuel cells involves two parts, heating and coolin
     Separate Air Flow & Simple setup, small parasitic power & A trade-off between efficiency and parasitic power \\
     \hline
     Liquid Cooling & Strong cooling power & Large radiator \\
+    \hline
+    Phase Change Cooling & Strong cooling power, no coolant pumps & Complex setup, instability \\
+    \hline
+    \end{tabular}
+    \caption{Cooling Strategies in FCEV}
+    \label{tab:coolingStrats}
+\end{table}
+
+\begin{figure}[h]
+    \includegraphics[width=\textwidth]{shankey_1.png}
+    \caption{Shankey Diagram showing hydrogen energy flow in a PEMFC\cite{nguyen2020proton}}
+    \centering
+    \label{fig:sangkyEnergy}  
+\end{figure}
+
+The biggest challenge to the liquid cooling system in LT-PEM is the insignificant difference in temperature between the fuel cell (60-80\degree C) and the ambient temperature (average 25\degree C) compared to most of the ICEs\cite{islamnanofluid}. This implies a large size radiator would be required for effective cooling, which is however undesirable in designing a light-weighted, compact vehicle. Another challenge arises from collaboration with other subsystems. Various parameters, include gases temperature at compressor outlet and water volume produced in FCS (Table 2), are critical in designing an efficient and precise heat exchange system.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|l|l|}%{|p{0.18\textwidth}|p{0.38\textwidth}||p{0.38\textwidth}|} %{|l||c|c|c|c|}
+    \hline
+    \textbf{Subsystem} & \textbf{Parameters required} & \textbf{Dependency in HMS} \\ [0.5ex] 
+    \hline\hline
+    Air Compressor & Gases temperature at the outlet & Inputs of heat exchanger \\
+    \hline
+    Water Management & The volume of water output in FCS & The volume of coolant required \\
+    \hline
+    H2 Pressure regulator & Gases temperature at the outlet & Inputs of heat exchanger \\
     \hline
     Phase Change Cooling & Strong cooling power, no coolant pumps & Complex setup, instability \\
     \hline
