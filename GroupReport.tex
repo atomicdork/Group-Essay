@@ -109,7 +109,7 @@ To improve the attractiveness of fuel cell vehicles, their efficiency needs to b
 \section{Overview of Proposed solution}
 
 \begin{figure}[h] \label{fig:systemOverview}
-    \includegraphics[width=\textwidth]{systemOverview.jpg}
+    \includegraphics[width=\textwidth]{system overview.png}
     \caption{Diagram of the proposed test rig systems}
     \centering  
 \end{figure}
@@ -182,6 +182,7 @@ The biggest challenge to the liquid cooling system in LT-PEM is the insignifican
     & \textbf{Parameters provided} & \textbf{Dependency in subsystem} \\
     \hline
     Power Management & The power needed for the heat exchanger & Total power required \\
+    \hline
     \end{tabular}
     \caption{Cooling Strategies in FCEV}
     \label{tab:subsystemDependencies}
@@ -213,8 +214,45 @@ Other than pressure, the overall temperature will also need to be controlled. Th
 
 Finally, filters will be required. The oxygen used for the fuel cell will come from the ambient air. Ambient air will not only contain oxygen; it also consists of other gases such as Nitrogen and Sulfur Dioxide\cite{ozyalcin2021investigation}. If they are within the system, it could cause corrosion in the fuel cell. Thus, it is essential to have the 'contaminants' filtered out before going to the fuel cell.
 
-\section{Power management}
+\subsection{Power management}
 To power, all these subsystems' ample energy needs to be provided.  As it is a test rig, it will be supplied using mains power supplies; however, to investigate if the compressor is beneficial, the system must be able to emulate the realities of using these elements in a vehicle. Therefore, the system must ensure that the additional power provided by the compressor is greater than the power it consumes.
+
+\subsection{Test rig}
+
+\begin{figure}[h]
+    \includegraphics[width=\textwidth]{testriglayout.jpg}
+    \caption{The layout of the test rig}
+    \centering
+    \label{fig:testriglayout}  
+\end{figure}
+
+The primary purpose of the test rig is to analyse the collected data to support the project's conclusions. First, the test rig should contain devices for data acquisition, such as various sensors. Secondly, the test rig should also provide an electronic load device to measure the output power of the fuel cells. At the same time, to prevent the power from being too large and a large amount of energy output during the load, which affects the stability of the test system, the test rib should use a feedback load. It can use the power electronic conversion technology to recycle the output energy of the tested power supply under the premise of completing the test power experiment and feeding the electric energy back to the power grid without pollution, avoiding the problem of the environmental temperature increase in the test site. Finally, the test system should also have a centre console that can integrate all the collected data for analysis and ultimately provide the basis for project conclusions. Overall, the test rig layout for the project design is shown in figure \ref{fig:testriglayout}.
+
+\section{Group Organisation}
+Initially, the group has decided to rotate the project manager and secretary roles each week. After the presentation, the decision was made to select one member to focus on each position as it was found that it was not easy to keep a clear objective and hold each other accountable. The project manager is Gigi Wong, and the secretary is Galen Korosec. Each group member is responsible for a subsystem; the individual assignments can be seen in the table below
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|l|}%{|p{0.18\textwidth}|p{0.38\textwidth}||p{0.38\textwidth}|} %{|l||c|c|c|c|}
+    \hline
+    \textbf{Subsystem} & \textbf{Group member} \\ [0.5ex] 
+    \hline
+    Compressor \& Boosting system & Ryan Jessop \\
+    Heat Management & Gigi Wong \\
+    Water Management & Yaoquan Tang \\
+    System Regulation & Shreyan Mandal \\
+    Power Management & Galen Korosec \\
+    \hline
+    \end{tabular}
+    \caption{Cooling Strategies in FCEV}
+    \label{tab:subsystemDependencies}
+\end{table}
+
+To ensure the schedule, which can be seen in appendix \ref{section:gantt}, was able to be followed, meetings were scheduled for every Monday and Wednesday. These meetings were used to discuss the progress made on the tasks assigned in the previous week, any questions or issues that needed to be addressed, and set the tasks for the following week. This can be found in the minutes in appendix \ref{section:minutes}.
+
+\section{Conclusion}
+With the expected rapid growth in demand for clean fuelled transport, fuel cell vehicles are undoubtedly the future of the automobile. However, the most common type of hydrogen fuel cell, PEM, currently encounters a significantly low power converting ratio deficiency. This project introduces a potential solution of a boosting system to increase the efficiency of hydrogen FCEV. The overall system design comprises five correlated subsystems, namely the air compressor, heat management system, water management system, regulatory system, and power management system. The plan also incorporates a testing rig to quantify the system efficiency.
+Based on the system architecture proposed in this report, the group will continue to work on the detailed design of each subsystem. The final design will be justified based on the system's overall efficiency, cost and power, which will be unfolded in the final technical report.
 
 
 \newpage
@@ -231,5 +269,20 @@ To power, all these subsystems' ample energy needs to be provided.  As it is a t
 
 %----------------------------------------------------------------------------------------
 
+%----------------------------------------------------------------------------------------
+%	APPENDIX
+%----------------------------------------------------------------------------------------
+\newpage
+\appendix
+\appendixpage
+\section{Appendix A: Gantt Chart}\label{section:gantt}
+
+\begin{figure}[h]\label{fig:ganttChart} 
+    \includegraphics[width=\textheight,angle=90]{GanttChart28_08_2022.jpg}
+    % \caption{The layout of the test rig}
+    \centering
+\end{figure}
+
+\section{Appendix B: Minutes}\label{section:minutes}
 
 \end{document}
