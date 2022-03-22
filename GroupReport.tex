@@ -41,10 +41,13 @@ The report details the initial development stage of a hydrogen fuel cell testing
 
 %\begin{center}
 \begin{tabular}{ l l }
-    \textbf{FCEV} & Fuel Cell Electric Vehicle \\
+    \textbf{AFC} & Alkaline Fuel Cell \\
+    \textbf{BEV} & Battery-powered Electric Vehicle \\
+    \textbf{FCV/ FCEV} & Fuel Cell Electric Vehicle \\
+    \textbf{FCS} & Fuel Cell Stack \\
     \textbf{PEM} & Polymer Electrolyte Membrane \\
-    \textbf{LT-PEM} & Low-temperature Polymer Electrolyte Membrane \\
     \textbf{HMS} & Heat Management System \\
+    \textbf{ICE} & Internal Combustion Engine \\
 \end{tabular}
 %\end{center}
 
@@ -52,7 +55,7 @@ The report details the initial development stage of a hydrogen fuel cell testing
 
 Fuel cell vehicles are gaining increased attention for authorities and industries to align with the Carbon Net-Zero target by 2050. To achieve the goal of limiting global temperatures rise to 1.5 °C, global demand for hydrogen fuel is expected to sixfold to 530 million tonnes in 2050; By then, 90\% of road transport should be powered by renewable energy, with 37\% being hydrogen-fuelled vehicles \cite{IEA2021netzero}. The Hydrogen Roadmap Europe has projected that there will be 3.7 million fuel cell vehicles on the road by 2030 \cite{FCHJU2019roadmap}, implying that the figure in 2050 could go as high as 9.8 million vehicles. 
 
-Despite the rigorous forecast in demand for hydrogen-fuelled vehicles, there are various difficulties in promoting hydrogen-fuelled vehicles, mainly due to the low power converting efficiency [DOE, 2006]. This project intends to increase power efficiency and explore the feasibility of developing a boosting system for hydrogen Fuel Cell Vehicles (FCV). A test rig is also designed to measure the booster efficiency. 
+Despite the rigorous forecast in demand for hydrogen-fuelled vehicles, there are various difficulties in promoting this technology, mainly due to the low power converting efficiency \cite{doe2006factsheet}. This project intends to increase power efficiency and explore the feasibility of developing a boosting system for hydrogen Fuel Cell Vehicles (FCV). A test rig is also designed to measure the booster efficiency. 
 
 This report first addresses the primary and secondary objectives of the project; second, it explains the background of the selection of system components, including the type of fuel cell and forms of hydrogen; finally, it goes into the overview of the proposed solution, which comprehends by the complete picture of the entire system and the five supporting subsystems.
 
@@ -60,7 +63,7 @@ This report first addresses the primary and secondary objectives of the project;
 
 The subject is researching the booster system that increases the efficiency of the FCVs. As mentioned, a test rig will be designed. Data will be collected in the test rig, which will be used for quantifying measurement and simulation to prove feasibility. This should contain a variety of sensors responsible for measuring temperature, pressure, humidity, flow, etc. The data collected will be input into the designed system console for analysis. At the same time, appropriate electronic load devices will be used, which will be responsible for measuring the output power of the fuel cell.
 
-Theoretically, the higher the reaction pressure, the higher the fuel cell's performance. Therefore, the control variable method is adopted. First, experiments are carried out with hydrogen under constant pressure, and the power of the battery system is tested by controlling the pressure of the air in which the reaction is carried out. Then, experiments are carried out with air under constant pressure, and the power of the battery system is tested by controlling the pressure of hydrogen gas. At the same time, factors such as temperature and humidity that may affect the experimental results should also be considered. Finally, the project will identify the maximum power generation efficiency that can be safely achieved under experimental conditions.
+According J.Hoeflinger\cite{hoeflinger2020air}, the higher the reaction pressure, the higher the fuel cell's performance. Therefore, the control variable method is adopted. First, experiments are carried out with hydrogen under constant pressure, and the power of the battery system is tested by controlling the pressure of the air in which the reaction is carried out. Then, experiments are carried out with air under constant pressure, and the power of the battery system is tested by controlling the pressure of hydrogen gas. At the same time, factors such as temperature and humidity that may affect the experimental results should also be considered. Finally, the project will identify the maximum power generation efficiency that can be safely achieved under experimental conditions.
 
 \section{Background}
 
@@ -107,11 +110,14 @@ Currently, there are three main types of fuel cells used in road vehicles, Polym
 To improve the attractiveness of fuel cell vehicles, their efficiency needs to be improved. For PEM fuel cells, research has shown that controlling the incoming air pressure can increase the system efficiency \cite{hoeflinger2020air}. As the fuel cell technology improves, the boosting needs to be optimised; for this reason, a testing rig to assist with the investigation into the effects of boosting is beneficial. 
 
 \section{Overview of Proposed solution}
+As stated by Pukrushpan \cite{pukrushpan2004control} and other researchers, a typical fuel cell system usually includes the system’s reactant flow, heat and temperature, water management and power management.
+However, this conventional partitioning does not fully applicable to incorporate a booster. Therefore it is re-partitioned to segregate the air intake and boosting system as an individual module, with the heat, water and power management as supporting modules. In addition, a regulatory module is introduced to have parameters within the system adjusted or consistent in a controlled manner. The system diagram is illustrated in Figure \ref{fig:systemOverview}.
 
-\begin{figure}[h] \label{fig:systemOverview}
+\begin{figure}[h] 
     \includegraphics[width=\textwidth]{system overview.png}
-    \caption{Diagram of the proposed test rig systems}
+    \caption{Diagram of the proposed boosting systems}
     \centering  
+    \label{fig:systemOverview}
 \end{figure}
 
 \subsection{Air Intake and Boosting}
@@ -127,7 +133,7 @@ The option to examine the effect of directly injecting oxygen into this system w
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{air intake system diagram.jpg}
-    \caption{Diagram of the proposed test rig systems}
+    \caption{Diagram of the air intake system}
     \centering
     \label{fig:airIntakeSys}  
 \end{figure}
@@ -137,7 +143,7 @@ The option to examine the effect of directly injecting oxygen into this system w
 
 Other subsystems are also vital in supporting the entire boosting system and the compressor. Heat Management is essential to maintain the system thermal and energy stability to withstand different environmental conditions. Steady-state operation of the fuel cell stack is critical to ensure maximum power output efficiency.  
 
-The heat exchange mechanism of fuel cells involves two parts, heating and cooling. The LT-PEM fuel cell needs to be maintained at thermal equilibrium at 60-80\degree C throughout the operation for maximum efficiency. The hydrogen and oxygen need to be heated to the same temperature when entering the fuel cell stack. On the other hand, a cooling system is necessary to remove extra heat generated during the fuel cell reaction. Four cooling strategies are commonly used in fuel cell vehicles (as shown in Table \ref{tab:coolingStrats}). For a typical FCEV with 100kW power, edge cooling or heat spreader is insufficient; air flow cooling cannot be made efficient either without reducing the fuel cell reaction rate\cite{wenthermalmanagement}. Phase change cooling is generally desirable but external coolant is required for vaporization cooling. Thus liquid cooling is most widely adopted on high power FCS for its strong cooling capability\cite{nguyen2020proton}.  In this design, liquid cooling is selected as it allows recovering up to 36\% of energy from waste heat (Figure \ref{fig:sangkyEnergy}) by combining with output water as coolant. This approach increases the system's overall power efficiency from recovering excess heat energy and up-cycles the water output as a coolant and humidifier for the gases. 
+The heat exchange mechanism of fuel cells involves two parts, heating and cooling. The PEM fuel cell needs to be maintained at thermal equilibrium at 50-100\degree C throughout the operation for maximum efficiency. The hydrogen and oxygen need to be heated to the same temperature when entering the fuel cell stack. On the other hand, a cooling system is necessary to remove extra heat generated during the fuel cell reaction. Four cooling strategies are commonly used in fuel cell vehicles (as shown in Table \ref{tab:coolingStrats}). For a typical FCEV with 100kW power, edge cooling or heat spreader is insufficient; air flow cooling cannot be made efficient either without reducing the fuel cell reaction rate\cite{wenthermalmanagement}. Phase change cooling is generally desirable but external coolant is required for vaporization cooling. Thus liquid cooling is most widely adopted on high power FCS for its strong cooling capability\cite{nguyen2020proton}.  In this design, liquid cooling is selected as it allows recovering up to 36\% of energy from waste heat (Figure \ref{fig:sangkyEnergy}) by combining with output water as coolant. This approach increases the system's overall power efficiency from recovering excess heat energy and up-cycles the water output as a coolant and humidifier for the gases. 
 
 \begin{table}[h!]
     \centering
@@ -165,7 +171,7 @@ The heat exchange mechanism of fuel cells involves two parts, heating and coolin
     \label{fig:sangkyEnergy}  
 \end{figure}
 
-The biggest challenge to the liquid cooling system in LT-PEM is the insignificant difference in temperature between the fuel cell (60-80\degree C) and the ambient temperature (average 25\degree C) compared to most of the ICEs\cite{islamnanofluid}. This implies a large size radiator would be required for effective cooling, which is however undesirable in designing a light-weighted, compact vehicle. Another challenge arises from collaboration with other subsystems. Various parameters, include gases temperature at compressor outlet and water volume produced in FCS (Table \ref{tab:subsystemDependencies}), are critical in designing an efficient and precise heat exchange system.
+The biggest challenge to the liquid cooling system in PEM is the insignificant difference in temperature between the fuel cell (50-100\degree C) and the ambient temperature (average 25\degree C) compared to most of the ICEs\cite{islamnanofluid}. This implies a large size radiator would be required for effective cooling, which is however undesirable in designing a light-weighted, compact vehicle. Another challenge arises from collaboration with other subsystems. Various parameters, include gases temperature at compressor outlet and water volume produced in FCS (Table \ref{tab:subsystemDependencies}), are critical in designing an efficient and precise heat exchange system.
 
 \begin{table}[h!]
     \centering
@@ -184,7 +190,7 @@ The biggest challenge to the liquid cooling system in LT-PEM is the insignifican
     Power Management & The power needed for the heat exchanger & Total power required \\
     \hline
     \end{tabular}
-    \caption{Cooling Strategies in FCEV}
+    \caption{Dependencies of HMS and other subsystems}
     \label{tab:subsystemDependencies}
 \end{table}
 
@@ -201,7 +207,7 @@ The heat dissipation of hydrogen fuel cell vehicles has always been a significan
     \label{fig:coolingWater}  
 \end{figure}
 
-On the one hand, during the operation of the hydrogen fuel cell, the ionic content of the coolant will increase, which will lead to an increase in its electrical conductivity and a decrease in the system insulation\cite{BARGAL2020635}. Therefore, deionisers are proposed to improve this phenomenon. By absorbing the anions and cations released from components, it ensures that the system is always at a high level of insulation. In addition, the thermostat in the layout can automatically adjust the amount of liquid participating in the heat dissipation of the battery according to the temperature of the cooling liquid to ensure that the fuel cell works within a suitable temperature range, which can save energy consumption.
+On one hand, during the operation of the hydrogen fuel cell, the ionic content of the coolant will increase, which will lead to an increase in its electrical conductivity and a decrease in the system insulation\cite{BARGAL2020635}. Therefore, deionisers are proposed to improve this phenomenon. By absorbing the anions and cations released from components, it ensures that the system is always at a high level of insulation. In addition, the thermostat in the layout can automatically adjust the amount of liquid participating in the heat dissipation of the battery according to the temperature of the cooling liquid to ensure that the fuel cell works within a suitable temperature range, which can save energy consumption.
 
 On the other hand, inside the reactor, water is produced as hydrogen reacts with oxygen. The production of this part of the water takes away a lot of heat. The water can be recycled to a certain extent, which means the radiator can cool it, then repeatedly lower reactor temperature. The water management system can efficiently cool the entire battery system and is an indispensable part of hydrogen fuel cell vehicles.
 
@@ -244,8 +250,8 @@ Initially, the group has decided to rotate the project manager and secretary rol
     Power Management & Galen Korosec \\
     \hline
     \end{tabular}
-    \caption{Cooling Strategies in FCEV}
-    \label{tab:subsystemDependencies}
+    \caption{subsystems allocation}
+    \label{tab:groupworkassignments}
 \end{table}
 
 To ensure the schedule, which can be seen in appendix \ref{section:gantt}, was able to be followed, meetings were scheduled for every Monday and Wednesday. These meetings were used to discuss the progress made on the tasks assigned in the previous week, any questions or issues that needed to be addressed, and set the tasks for the following week.
@@ -254,6 +260,9 @@ To ensure the schedule, which can be seen in appendix \ref{section:gantt}, was a
 With the expected rapid growth in demand for clean fuelled transport, fuel cell vehicles are undoubtedly the future of the automobile. However, the most common type of hydrogen fuel cell, PEM, currently encounters a significantly low power converting ratio deficiency. This project introduces a potential solution of a boosting system to increase the efficiency of hydrogen FCEV. The overall system design comprises five correlated subsystems, namely the air compressor, heat management system, water management system, regulatory system, and power management system. The plan also incorporates a testing rig to quantify the system efficiency.
 Based on the system architecture proposed in this report, the group will continue to work on the detailed design of each subsystem. The final design will be justified based on the system's overall efficiency, cost and power, which will be unfolded in the final technical report.
 
+\newline
+
+\textbf{Author Contribution: }Abstract, R.J.; Introduction, G.W.; Objective, Y.T.; Background, G.K.; Proposed solution – compressor, R.J; HMS, G.W.; WMS, Y.T.; regulators, S.M.; PMS, G.K.; Test rig, Y.T.; Organisation, G.K.; Conclusion, G.W.; writing – review and editing , G.K.; 
 
 \newpage
 
