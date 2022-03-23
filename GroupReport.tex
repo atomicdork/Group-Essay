@@ -111,8 +111,8 @@ Currently, there are three main types of fuel cells used in road vehicles, Polym
 To improve the attractiveness of fuel cell vehicles, their efficiency needs to be improved. For PEM fuel cells, research has shown that controlling the incoming air pressure can increase the system efficiency \cite{hoeflinger2020air}. As the fuel cell technology improves, the boosting needs to be optimised; for this reason, a testing rig to assist with the investigation into the effects of boosting is beneficial. 
 
 \section{Overview of Proposed solution}
-As stated by Pukrushpan \cite{pukrushpan2004control} and other researchers, a typical fuel cell system usually includes the system’s reactant flow, heat and temperature, water management and power management.
-However, this conventional partitioning does not fully applicable to incorporate a booster. Therefore it is re-partitioned to segregate the air intake and boosting system as an individual module, with the heat, water and power management as supporting modules. In addition, a regulatory module is introduced to have parameters within the system adjusted or consistent in a controlled manner. The system diagram is illustrated in Figure \ref{fig:systemOverview}.
+
+As stated by Pukrushpan \cite{pukrushpan2004control} and other researchers, a typical fuel cell system usually includes the system’s reactant flow, heat and temperature, water management and power management. However, this conventional partitioning is not fully applicable to incorporate a booster. Therefore, the fuel cell boosting system is re-partitioned to segregate the air intake and boosting system as an individual module, with the heat, water and power management as supporting modules. In addition, a regulatory module is introduced to have parameters within the system adjusted or consistent in a controlled manner.
 
 \begin{figure}[h] 
     \includegraphics[width=\textwidth]{system overview.png}
@@ -120,6 +120,9 @@ However, this conventional partitioning does not fully applicable to incorporate
     \centering  
     \label{fig:systemOverview}
 \end{figure}
+
+Figure \ref{fig:systemOverview} illustrates the flow of the reactants and their interaction with each subsystem. The diagram also indicates the intercorrelation between the subsystems and how they integrate to form the complete boosting system.
+
 
 \subsection{Air Intake and Boosting}
 The air intake and boosting system will be the initial point where the ambient air at atmospheric pressure enters the system. The project brief aims to develop a testing rig for the fuel cell's power output at varying pressure ratios. This suggests that the boosting system needs to take the ambient air at atmospheric pressure and supply the system with the relevant ratios. The first stage in the project will be to determine a definitive range of pressure ratios that must be provided to the fuel cell to carry out the appropriate testing. This can be done by reading relevant literature on alternate methods of fuel cell tests on comparable fuel cell stack sizes and how the cells performed for these pressure ratios. For example, the study on the optimal pressure ratios of a PEM fuel cell\cite{hoeflinger2020air} indicated that the tested pressure ratios were between 1.0 and 2.2. A further review of multiple studies into the relevant fuel cells will show the necessary ratios.
@@ -152,16 +155,16 @@ The heat exchange mechanism of fuel cells involves two parts, heating and coolin
     \hline
     Cooling Strategy & Advantages & Limitations \\ [0.5ex] 
     \hline\hline
-    Edge Cooling & Simple setup, small parasitic power & Low efficiency \\
+    Edge Cooling\cite{EdgeCooling} & Simple setup, small parasitic power & Low efficiency \\
     \hline
-    Separate Air Flow & Simple setup, small parasitic power & A trade-off between efficiency and parasitic power \\
+    Separate Air Flow\cite{AirCooling} & Simple setup, small parasitic power & A trade-off between efficiency and parasitic power \\
     \hline
-    Liquid Cooling & Strong cooling power & Large radiator \\
+    Liquid Cooling\cite{nguyen2020proton} & Strong cooling power & Large radiator \\
     \hline
-    Phase Change Cooling & Strong cooling power, no coolant pumps & Complex setup, instability \\
+    Phase Change Cooling\cite{PhaseCooling} & Strong cooling power, no coolant pumps & Complex setup, instability \\
     \hline
     \end{tabular}
-    \caption{Cooling Strategies in FCEV}
+    \caption{Cooling Strategies in FCEV\cite{bvumbe2016review}}
     \label{tab:coolingStrats}
 \end{table}
 
@@ -192,7 +195,7 @@ The biggest challenge to the liquid cooling system in PEM is the insignificant d
     Power Management & The power needed for the heat exchanger & Total power required \\
     \hline
     \end{tabular}
-    \caption{Dependencies of HMS and other subsystems}
+    \caption{Dependencies of HMS and other subsystems\cite{pukrushpan2004control}}
     \label{tab:subsystemDependencies}
 \end{table}
 
